@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import type {Node} from 'react';
 import {
   Button,
@@ -40,6 +40,25 @@ const App: () => Node = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  // If null, no SMS has been sent
+  const [confirm, setConfirm] = useState(null);
+
+  const [code, setCode] = useState('');
+
+  // Handle the button press
+  async function signInWithPhoneNumber(phoneNumber) {
+    const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
+    setConfirm(confirmation);
+  }
+
+  async function confirmCode() {
+    try {
+      await confirm.confirm(code);
+    } catch (error) {
+      console.log('Invalid code.');
+    }
+  }
 
   async function getUser(){
   
@@ -101,6 +120,12 @@ const App: () => Node = () => {
       title='get from db'
       onPress={getUser}
       ></Button>
+
+      <Button
+        title="Phone Number Sign In"
+        onPress={() => signInWithPhoneNumber('+270790544224')}
+      />
+  
     </SafeAreaView>
   );
 };

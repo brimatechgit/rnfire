@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "580243678416-22o3de3v4a393p3rhb8b6paj1cu8f1ut.apps.googleusercontent.com",
+          "client_id": "580243678416-o52ua25guhjgpqf2nclr906pmsccgd6j.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.rnfire",
-            "certificate_hash": "832b52a56a39d03aa4c508f79df8af810c09f973"
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
           }
         },
         {
