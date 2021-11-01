@@ -73,6 +73,8 @@ const App: () => Node = () => {
       .add({
         name: 'Ada Auth 2',
         email: 'jane2.doe@example.com',
+      }).then((res) => {
+        console.log(res.id)
       })
       })
       .catch(error => {
